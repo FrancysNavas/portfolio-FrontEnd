@@ -3,9 +3,9 @@
 }
 .mat-card#first-card {
     padding: 0;
-    margin-top: 0%;
+    margin-top: 0;
     border-radius: 0 0 32px 32px;
-    margin: 5px;
+    margin: 0 5px;
 }
 div#profile-background {
     display: block;

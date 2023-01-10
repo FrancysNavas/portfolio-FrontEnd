@@ -11,6 +11,7 @@
 }
 .acerca{
     margin-top: 20px;
+    margin-left: 20px;
 }
 .nombre{
     margin-left: 20px;
@@ -19,4 +20,7 @@
 .fullstack{
     margin-bottom: 0px;
     margin-left: 15px;
+}
+.botones {
+    margin-left: 90%;
 }
