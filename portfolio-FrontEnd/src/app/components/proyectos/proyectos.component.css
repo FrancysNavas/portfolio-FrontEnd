@@ -5,6 +5,17 @@
     margin: 5px;
     border-radius: 32px 32px;
 }
+
+.botones {
+    display: flex;
+    margin-left: 90%;
+    list-style: none;
+    
+}
+
+.log {
+    width: 400px;
+}
 h4 {
     margin-left: 50px;
     margin-top: 10px;
