@@ -14,13 +14,20 @@
     margin-left: 20px;
 }
 .nombre{
-    margin-left: 20px;
+    margin-left: 30px;
     
 }
 .fullstack{
     margin-bottom: 0px;
     margin-left: 15px;
 }
+.fullstack1{
+    margin-bottom: 0px;
+    margin-left: 70px;
+}
 .botones {
     margin-left: 90%;
+}
+.fuente {
+    font-family: 'Kaushan Script', cursive;
 }
