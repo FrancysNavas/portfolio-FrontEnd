@@ -1,0 +1,26 @@
+.row{
+    background-color: rgb(205, 100, 226);
+    display: flex;
+    flex-direction:column;
+    text-align: center;
+}
+footer{
+    color: white;
+    font-size: 14px;
+    margin-top: -80px;
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+    
+}
+.dos{
+    margin-top: 0%;
+    padding-top: 0%;
+}
+.uno{
+    margin-bottom: 0%;
+}
+img{
+    width: 120px;
+    margin-left: 500px;
+    margin-top: -10px;
+}
