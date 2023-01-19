@@ -1,9 +1,9 @@
 export class Persona {
     //declaramos los atributos de le entity
     id?: number;
-    nombre: String;
-    apellido: String;
-    img: String;
+    nombre: string;
+    apellido: string;
+    img: string;
 
     //crear un constructor
     constructor (nombre:string, apellido:string, img:string){
