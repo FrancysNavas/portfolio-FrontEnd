@@ -26,11 +26,11 @@
                     <h3 class="title">Experiencia Laboral</h3>
                     <form class="form-horizontal" (ngSubmit)="onCreate()" novalidate #f="ngForm">
                         <div class="form-group">
-                            <label>Titulo de la experiencia</label>
+                            <label for="nombreE">Titulo de la experiencia</label>
                             <input type="text" class="form-control" placeholder="puesto laboral" id="nombreE" [(ngModel)]="nombreE" name="nombreE" required [ngModelOptions]="{standalone: true}">
                         </div>
                         <div class="form-group">
-                            <label>Descripción</label>
+                            <label for="descripcionE">Descripción</label>
                             <input type="text" class="form-control" placeholder="Descripción del puesto" id="descripcionE" [(ngModel)]="descripcionE" name="descripcionE" required [ngModelOptions]="{standalone: true}">
                         </div>
                                                
