@@ -1,11 +1,30 @@
 <section class="experiencia">
     <div class="card mat-card">
         <h4 class="fuente">Experiencia</h4>
-        <ul class="botones">
-        <li><a class="" href="" > <img src="../../../assets/plus-sign.png" alt="" name="agregar" > </a></li>
-        </ul>
+        <div class="botones">
+          <button type="button"  *ngIf="isLogged">
+            <li><a class="" href="" routerLink="/nuevaexp"> <img src="../../../assets/plus-sign.png" alt="" name="agregar" > </a></li>
+          </button>
+        </div>
+
         <div class="row">
           <div class="col-lg-1"></div>
+          <div class="col-lg-11">
+            <table class="table">
+              <tbody>
+                <tr *ngFor="let Experiencia of experiencia">
+                  <td>{{Experiencia.nombreE}}</td>
+                  <td>{{Experiencia.descripcionE}}</td>
+                  <td>Editar</td>
+                  <td>Eliminar</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+
+
           <div class="col-lg-4">
             <div>
               <img class="logos img-fluid" src="../../../assets/MPPE.jpg" alt="" />

@@ -1,0 +1,43 @@
+<!--
+<div class="container">
+    <div class="row">
+        <div>
+            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="nombreE">Titulo de la experiencia</label>
+                    <input type="text" class="form-control" id="nombreE" [(ngModel)]="nombreE" name="nombreE" required [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                    <label for="descripcionE">Descripción</label>
+                    <input type="text" class="form-control" id="descripcionE" [(ngModel)]="descripcionE" name="descripcionE" required [ngModelOptions]="{standalone: true}">
+                </div>
+                <button type="submit" class="btn btn-light">
+                    Agregar Experiencia
+                </button>
+            </form>
+        </div>
+    </div>
+</div>-->
+<div class="form-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <div class="form-container">
+                    <h3 class="title">Experiencia Laboral</h3>
+                    <form class="form-horizontal" (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                        <div class="form-group">
+                            <label>Titulo de la experiencia</label>
+                            <input type="text" class="form-control" placeholder="puesto laboral" id="nombreE" [(ngModel)]="nombreE" name="nombreE" required [ngModelOptions]="{standalone: true}">
+                        </div>
+                        <div class="form-group">
+                            <label>Descripción</label>
+                            <input type="text" class="form-control" placeholder="Descripción del puesto" id="descripcionE" [(ngModel)]="descripcionE" name="descripcionE" required [ngModelOptions]="{standalone: true}">
+                        </div>
+                                               
+                        <button type="submit" class="btn signup">Agregar experiencia</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
