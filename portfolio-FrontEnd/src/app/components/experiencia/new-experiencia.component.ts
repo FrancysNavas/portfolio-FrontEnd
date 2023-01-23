@@ -18,6 +18,7 @@ export class NewExperienciaComponent implements OnInit {
   ngOnInit(): void {
     
   }
+  
   onCreate(): void{
     const expe = new Experiencia(this.nombreE, this.descripcionE);
     this.sExperiencia.save(expe).subscribe(
@@ -29,8 +30,7 @@ export class NewExperienciaComponent implements OnInit {
       error: err => {
         alert("Fallo en el proceso.");
         this.router.navigate(['']);
-      },
-      complete: () => {console.info('complete')}
+      }
       }
     );
   }

@@ -36,9 +36,9 @@ import { NewExperienciaComponent } from './components/experiencia/new-experienci
     NewExperienciaComponent
   ],
   imports: [
-    FormsModule,
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     NgCircleProgressModule.forRoot({}),
     HttpClientModule
     

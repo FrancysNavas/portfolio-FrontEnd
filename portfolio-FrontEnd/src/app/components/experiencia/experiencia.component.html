@@ -1,4 +1,44 @@
-<!--<section class="experiencia">-->
+<div class="card mat-card">
+  <h4 class="fuente">Experiencia</h4>
+  <div class="row">
+    <div class="botones">
+      <button type="button" *ngIf="isLogged">
+        <a class="" href="" routerLink="/nuevaexp">
+          <img src="../../../assets/plus-sign.png" alt="" name="agregar" />
+        </a>
+      </button>
+    </div>
+
+    <div class="col lg 1"></div>
+    <div class="col-lg-10">
+      <table class="table">
+        <tbody>
+          <tr *ngFor="let Experiencia of expe">
+            <td>
+              <h2>{{ Experiencia.nombreE }}gjgjhgjgjg</h2>
+            </td>
+            <td>{{ Experiencia.descripcionE }}</td>
+            <td *ngIf="isLogged">
+              <button
+                class="btn btn-light"
+                routerLink="/editexp/{{ Experiencia.id }}"
+              >
+                <i class="bi bi-pencil-fill"></i> EDITAR
+              </button>
+            </td>
+            <td *ngIf="isLogged">
+              <button class="btn btn-danger" (click)="delete(Experiencia.id)">
+                <i class="bi bi-trash-fill"></i> BORRAR
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!--<section class="experiencia">
     <div class="card mat-card">
         <h4 class="fuente">Experiencia</h4>
         <div class="botones">
@@ -6,7 +46,6 @@
             <a class="" href="" routerLink="/nuevaexp"> <img src="../../../assets/plus-sign.png" alt="" name="agregar" > </a>
           </button>
         </div>
-
         <div class="row">
           <div class="col-lg-1"></div>
           <div class="col-lg-11">
@@ -21,10 +60,9 @@
               </tbody>
             </table>
           </div>
-
-
-<!--
-
+        </div>
+    </div>
+    
           <div class="col-lg-4">
             <div>
               <img class="logos img-fluid" src="../../../assets/MPPE.jpg" alt="" />
@@ -47,7 +85,8 @@
         </div>
       
     </div>
+  -->
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" 
     crossorigin><link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
     <style> @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap'); </style>
-  </section>-->
+
