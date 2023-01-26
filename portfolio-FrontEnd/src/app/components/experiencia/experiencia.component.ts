@@ -31,20 +31,29 @@ export class ExperienciaComponent implements OnInit{
 
   cargarExperiencia(): void{
     this.sExperiencia.lista().subscribe(
-      data=> {
-        this.expe= data});
+      {
+        next: (data) => {
+        this.expe = data;
+      }, error: (err) => {
+        console.log("no funciona el subscribe");
+      } 
+      }
+      );
   }
   
   delete(id?: number): void{
     if(id != undefined){
       this.sExperiencia.delete(id).subscribe(
-        data => {
+        {
+         next: data => {
           this.cargarExperiencia();
-        }, err => {
+        }, 
+        error: err => {
           alert("No se pudo borrar la experiencia");
         }
-      )
-    }
+       }
+      );
   }
 
+}
 }

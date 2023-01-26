@@ -8,11 +8,12 @@ import { Experiencia } from '../model/experiencia';
 })
 export class SExperienciaService {
   expURL = 'http://localhost:8080/explaboral/';
+  
 
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Experiencia[]>{
-    return this.httpClient.get<Experiencia[]>(this.expURL + 'Lista');
+    return this.httpClient.get<Experiencia[]>(this.expURL + 'lista');
   }
 
   public detail(id: number): Observable<Experiencia[]>{
