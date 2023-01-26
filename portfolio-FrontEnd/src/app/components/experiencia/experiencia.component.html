@@ -15,20 +15,19 @@
         <tbody>
           <tr *ngFor="let Experiencia of expe">
             <td>
-              <h2>{{ Experiencia.nombreE }}</h2>
+              <h5>{{ Experiencia.nombreE }}</h5>
             </td>
             <td>{{ Experiencia.descripcionE }}</td>
             <td *ngIf="isLogged">
               <button
                 class="btn btn-light"
-                routerLink="/editexp/{{ Experiencia.id }}"
-              >
-                <i class="bi bi-pencil-fill"></i> EDITAR
+                routerLink="/editexp/{{ Experiencia.id }}">
+                <i class="bi bi-pencil-fill"><img src="../../../assets/pencil-tool.png" alt=""></i>
               </button>
             </td>
             <td *ngIf="isLogged">
               <button class="btn btn-danger" (click)="delete(Experiencia.id)">
-                <i class="bi bi-trash-fill"></i> BORRAR
+                <i class="bi bi-trash-fill"><img src="../../../assets/trash-bin.png" alt=""></i>
               </button>
             </td>
           </tr>

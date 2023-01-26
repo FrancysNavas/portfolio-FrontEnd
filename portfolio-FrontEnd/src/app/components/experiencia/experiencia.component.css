@@ -20,3 +20,7 @@ h4 {
 .fuente {
     font-family: 'Kaushan Script', cursive;
 }
+.table{
+    border-style: none;
+    border: white;
+}
