@@ -1,6 +1,95 @@
-<section class="educacion">
+<div class="card mat-card">
+  <h4 class="fuente">Educación</h4>
+  <div class="row">
+    <div class="botones">
+      <button class="btn" type="button" *ngIf="isLogged">
+        <a class="a" href="" routerLink="/nuevaedu">
+          <img src="../../../assets/plus-sign.png" alt="" name="agregar" />
+        </a>
+      </button>
+    </div>
+
+    <div class="col lg 1"></div>
+    <div class="col-lg-10">
+      <table class="table">
+        <tbody>
+          <tr *ngFor="let Educacion of educacion">
+            <td>
+              <h4 class="fuente">{{ Educacion.nombreE }}</h4>
+            </td>
+            <td>{{ Educacion.descripcionE }}</td>
+            <td *ngIf="isLogged">
+              <button
+                class="btn btn-light"
+                routerLink="/editedu/{{ Educacion.id }}">
+                <i class="bi bi-pencil-fill"><img src="../../../assets/pencil-tool.png" alt=""></i>
+              </button>
+            </td>
+            <td *ngIf="isLogged">
+              <button class="btn btn-danger" (click)="delete(Educacion.id)">
+                <i class="bi bi-trash-fill"><img src="../../../assets/trash-bin.png" alt=""></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!--<section class="experiencia">
+    <div class="card mat-card">
+        <h4 class="fuente">Experiencia</h4>
+        <div class="botones">
+          <button type="button"  *ngIf="isLogged">
+            <a class="" href="" routerLink="/nuevaexp"> <img src="../../../assets/plus-sign.png" alt="" name="agregar" > </a>
+          </button>
+        </div>
+        <div class="row">
+          <div class="col-lg-1"></div>
+          <div class="col-lg-11">
+            <table class="table">
+              <tbody>
+                <tr *ngFor="let Experiencia of expe">
+                  <td>{{Experiencia.nombreE}}</td>
+                  <td>{{Experiencia.descripcionE}}</td>
+                  <td>Editar</td>
+                  <td>Eliminar</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+    </div>
+    
+          <div class="col-lg-4">
+            <div>
+              <img class="logos img-fluid" src="../../../assets/MPPE.jpg" alt="" />
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <h5 class="fuente">Docente Titular</h5>
+            <p>(2.006 - 2.018) <br />
+              Docente de aula por horas. <br />
+              Especialista en el Área de Ciencias Sociales. <br>
+              Venezuela
+            </p>
+          </div>
+          <div class="col-lg-2">
+            <ul class="botones">
+            <li><a class="" href=""> <img src="../../../assets/pencil-tool.png" alt=""> </a></li>
+            <li><a class="" href=""> <img src="../../../assets/trash-bin.png" alt=""> </a></li>
+            </ul>
+          </div>
+        </div>
+      
+    </div>
+  -->
+    
+<!--<section class="educacion">
     <div class="card mat-card">
         <h4 class="fuente">Educación</h4>
+       
         <ul class="botones">
           <li><a class="" href="" > <img src="../../../assets/plus-sign.png" alt="" name="editar" > </a></li>
         </ul>
@@ -142,10 +231,12 @@
                 <li><a class="" href=""> <img src="../../../assets/trash-bin.png" alt=""> </a></li>
             </ul>
           </div>
+          
         </div>
       
     </div>
+    -->
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" 
     crossorigin><link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
     <style> @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap'); </style>
-  </section>
+  
