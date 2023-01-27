@@ -1,23 +1,24 @@
 <div class="form-bg">
-    <div class="container">
+    <div class="container" *ngIf="educacion">
         <div class="row">
             <div class="col-md-offset-3 col-md-6">
                 <div class="form-container">
-                    <h3 class="title">Agregar Educación</h3>
-                    <form  class="form-horizontal" (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                    <h3 class="title">Editar Educación</h3>
+                    <form  class="form-horizontal" (ngSubmit)="onUpdate()" novalidate #f="ngForm">
                         <div class="form-group">
                             <label for="nombreE">Nombre de la Institución / Curso</label>
-                            <input type="text" class="form-control" id="nombreE" [(ngModel)]="nombreE" name="nombreE" required>
+                            <input type="text" class="form-control" id="nombreE" [(ngModel)]="educacion.nombreE" name="nombreE" required>
                         </div>
                         <div class="form-group">
                             <label for="descripcionE">Titulo Obtenido</label>
-                            <input type="text" class="form-control" id="descripcionE" [(ngModel)]="descripcionE" name="descripcionE" required >
+                            <input type="text" class="form-control" id="descripcionE" [(ngModel)]="educacion.descripcionE" name="descripcionE" required >
                         </div>
                                                
-                        <button class="btn signup">Agregar Educación</button>
+                        <button class="btn signup">Agregar Cambios</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+

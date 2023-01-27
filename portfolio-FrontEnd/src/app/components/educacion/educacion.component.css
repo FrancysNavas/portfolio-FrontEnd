@@ -1,6 +1,3 @@
-.fuente {
-    font-family: 'Kaushan Script', cursive;
-}
 .mat-card{
     margin: 5px;
     border-radius: 32px 32px;
@@ -19,4 +16,11 @@
 h4 {
     margin-left: 50px;
     margin-top: 10px;
+}
+.fuente {
+    font-family: 'Kaushan Script', cursive;
+}
+.table{
+    border-style: none;
+    border: white;
 }
