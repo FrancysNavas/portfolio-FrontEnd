@@ -2,16 +2,20 @@
     <div class="card mat-card" id="second-card">
         <div class="row">
             <div class="col-lg-4">
-                <img class="img-fluid" src="../../../assets/perfileditado.jpg" alt="Perfil"  id="profile-image" />
-                <a class="bu" href=""><img src="../../../assets/pencil-tool.png" alt=""></a>
+                <img class="img-fluid" src={{persona.img}} alt="Perfil"  id="profile-image" />
+                <button class="btn" type="button" *ngIf="isLogged">
+                    <a class="a bu" href="" routerLink="/editacercade/1">
+                      <img src="../../../assets/pencil-tool.png" alt="" name="" />
+                    </a>
+                  </button>
                 <h1 class="nombre fuente" >{{persona.nombre}} {{persona.apellido}}</h1>
                 <p class="fullstack1 fuente">Full Stack Developer Jr.</p>
                 <p class="fullstack fuente">Ciudad Autónoma de Buenos Aires (Argentina) </p>
             </div>
             <div class="col-lg-8">
                 <h4 class="fuente acerca">Acerca de mí...</h4>
-                <a class="botones" href=""><img src="../../../assets/pencil-tool.png" alt=""></a>
-                <p class="">
+                <p>{{persona.descripcion}}</p>
+              <!--  <p class="">
                     Soy Francys...Actualmente capacitandome de forma constante y
                     asertiva en Lenguajes de Programación y sus entornos. <br />
                     Interesada en ingresar en el mundo IT para continuar con mi
@@ -23,7 +27,7 @@
                     determinación en aprender algo nuevo cada día...<br />
                     y es mi motivación: Aprender cada día para poder aplicarlo en un
                     entorno de trabajo.
-                </p>
+                </p>-->
             </div>
 
         </div>
