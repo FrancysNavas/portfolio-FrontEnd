@@ -25,7 +25,6 @@ import { EditSkillsComponent } from './components/skills/edit-skills.component';
 import { NewSkillsComponent } from './components/skills/new-skills.component';
 import { EditAcercaDeComponent } from './components/acerca-de/edit-acerca-de.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +46,7 @@ import { EditAcercaDeComponent } from './components/acerca-de/edit-acerca-de.com
     EditSkillsComponent,
     NewSkillsComponent,
     EditAcercaDeComponent,
+    
     
   ],
   imports: [
