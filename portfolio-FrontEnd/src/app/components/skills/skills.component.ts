@@ -27,7 +27,7 @@ export class SkillsComponent implements OnInit {
   cargarSkills(): void {
     this.skillService.lista().subscribe(
       {
-        next: data => {
+        next: (data: Skills[]) => {
           this.skill = data;
         }
       }
@@ -38,10 +38,10 @@ export class SkillsComponent implements OnInit {
     if (id != undefined) {
       this.skillService.delete(id).subscribe(
         {
-          next: data => {
+          next: (data: any) => {
             this.cargarSkills();
           },
-          error: err => {
+          error: (err: any) => {
             alert("No se pudo borrar la Skill");
           }
         }

@@ -26,9 +26,9 @@ export class EducacionComponent implements OnInit {
   cargarEducacion(): void{
     this.educacionS.lista().subscribe(
       {
-        next: (data) => {
+        next: (data: Educacion[]) => {
         this.educacion = data;
-      }, error: (err) => {
+      }, error: (err: any) => {
         console.log("no funciona el subscribe");
       } 
       }
@@ -39,10 +39,10 @@ export class EducacionComponent implements OnInit {
     if(id != undefined){
       this.educacionS.delete(id).subscribe(
         {
-         next: data => {
+         next: (data: any) => {
           this.cargarEducacion();
         }, 
-        error: err => {
+        error: (err: any) => {
           alert("No se pudo borrar.");
         }
        }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Educacion } from 'src/app/model/educacion';
 import { EducacionService } from 'src/app/service/educacion.service';
 
@@ -17,10 +17,10 @@ educacion : Educacion = null;
     
     this.educacionS.detail(id).subscribe(
       {
-        next: data => {
+        next: (data: Educacion) => {
           this.educacion = data;
         },
-        error: err => {
+        error: (err: any) => {
           alert("Error al modificar educación.");
           this.router.navigate(['']);
         }
@@ -32,10 +32,10 @@ educacion : Educacion = null;
     const id = this.activatedRouter.snapshot.params['id'];
     this.educacionS.update(id, this.educacion).subscribe(
       {
-        next: data => {
+        next: (data: any) => {
           this.router.navigate(['']);
         },
-        error: err => {
+        error: (err: any) => {
           alert("Error al modificar educación.");
           this.router.navigate(['']);
         }

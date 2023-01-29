@@ -32,9 +32,9 @@ export class ExperienciaComponent implements OnInit{
   cargarExperiencia(): void{
     this.sExperiencia.lista().subscribe(
       {
-        next: (data) => {
+        next: (data: Experiencia[]) => {
         this.expe = data;
-      }, error: (err) => {
+      }, error: (err: any) => {
         console.log("no funciona el subscribe");
       } 
       }
@@ -45,10 +45,10 @@ export class ExperienciaComponent implements OnInit{
     if(id != undefined){
       this.sExperiencia.delete(id).subscribe(
         {
-         next: data => {
+         next: (data: any) => {
           this.cargarExperiencia();
         }, 
-        error: err => {
+        error: (err: any) => {
           alert("No se pudo borrar la experiencia");
         }
        }

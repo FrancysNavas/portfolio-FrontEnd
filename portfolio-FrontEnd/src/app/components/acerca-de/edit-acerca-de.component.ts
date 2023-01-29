@@ -18,10 +18,10 @@ persona: Persona =  null;
     
     this.personaService.detail(id).subscribe(
       {
-        next: data => {
+        next: (data: Persona) => {
           this.persona = data;
         },
-        error: err => {
+        error: (err: any) => {
           alert("Error al modificar educación.");
           this.router.navigate(['']);
         }
@@ -33,10 +33,10 @@ persona: Persona =  null;
     const id = this.activatedRouter.snapshot.params['id'];
     this.personaService.update(id, this.persona).subscribe(
       {
-        next: data => {
+        next: (data: any) => {
           this.router.navigate(['']);
         },
-        error: err => {
+        error: (err: any) => {
           alert("Error al modificar educación.");
           this.router.navigate(['']);
         }

@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(this.loginUsuario).subscribe(
       {
-        next: data => {
+        next: (data: { token: string; nombreUsuario: string; authorities: string[]; }) => {
           this.isLogged = true;
           this.isLoginFail = false;
           this.tokenService.setToken(data.token);
@@ -63,7 +63,7 @@ export class LoginComponent implements OnInit {
           this.roles = data.authorities;
           this.router.navigate([''])
         },
-        error: err => {
+        error: (err: { error: { errMsj: string; }; }) => {
           this.isLogged = false;
           this.isLoginFail = true;
           this.errMsj = err.error.errMsj;

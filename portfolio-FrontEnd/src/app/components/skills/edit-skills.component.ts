@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Route, Router } from '@angular/router';
-import { VirtualTimeScheduler } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Skills } from 'src/app/model/skills';
 import { SkillsService } from 'src/app/service/skills.service';
 
@@ -17,10 +16,10 @@ export class EditSkillsComponent implements OnInit{
     const id = this.activatedRouter.snapshot.params['id'];
     this.skillService.detail(id).subscribe(
       {
-        next: data => {
+        next: (data: Skills) => {
           this.skills = data;
         },
-        error: err =>{
+        error: (err: any) =>{
           alert("Error al modificar la Skill.");
           this.router.navigate(['']);
         }
@@ -32,10 +31,10 @@ export class EditSkillsComponent implements OnInit{
     const id = this.activatedRouter.snapshot.params['id'];
     this.skillService.update(id, this.skills).subscribe(
       {
-        next: data => {
+        next: (data: any) => {
           this.router.navigate(['']);
         },
-        error: err =>{
+        error: (err: any) =>{
           alert("Error al modificar la Skill.");
           this.router.navigate(['']);
         }

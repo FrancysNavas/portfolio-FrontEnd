@@ -27,10 +27,10 @@ export class AcercaDeComponent implements OnInit {
   cargarPersona(): void{
     this.personaService.detail(1).subscribe(
       {
-        next: data => {
+        next: (data: Persona) => {
           this.persona = data;
         },
-        error: err =>{
+        error: (err: any) =>{
           alert("error al cargar persona.");
         }
       }

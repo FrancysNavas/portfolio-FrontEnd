@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms'; 
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -45,22 +45,21 @@ import { EditAcercaDeComponent } from './components/acerca-de/edit-acerca-de.com
     EditEducacionComponent,
     EditSkillsComponent,
     NewSkillsComponent,
-    EditAcercaDeComponent,
-    
-    
+    EditAcercaDeComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgCircleProgressModule.forRoot({}),
+    
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule
-    
   ],
   providers: [
-    interceptorProvider
+    interceptorProvider,
+    NgCircleProgressModule.forRoot({})
   ],
   bootstrap: [AppComponent]
 })
