@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -24,6 +24,9 @@ import { EditEducacionComponent } from './components/educacion/edit-educacion.co
 import { EditSkillsComponent } from './components/skills/edit-skills.component';
 import { NewSkillsComponent } from './components/skills/new-skills.component';
 import { EditAcercaDeComponent } from './components/acerca-de/edit-acerca-de.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -52,14 +55,17 @@ import { EditAcercaDeComponent } from './components/acerca-de/edit-acerca-de.com
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    
+    NgCircleProgressModule.forRoot({}),
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
   ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [
-    interceptorProvider,
-    NgCircleProgressModule.forRoot({})
+    interceptorProvider
+    
   ],
   bootstrap: [AppComponent]
 })
