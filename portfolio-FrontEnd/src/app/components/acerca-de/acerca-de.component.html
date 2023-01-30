@@ -2,7 +2,7 @@
     <div class="card mat-card" id="second-card">
         <div class="row">
             <div class="col-lg-4">
-                <img class="img-fluid" alt="Perfil"  id="profile-image" />{{persona.img}}
+                <img class="img-fluid"src="{{persona?.img}}"  alt="Perfil"  id="profile-image" />
                 <button class="btn" type="button" *ngIf="isLogged">
                     <a class="a bu" href="" routerLink="/editacercade/1">
                       <img src="../../../assets/pencil-tool.png" alt="" name="" />
@@ -14,20 +14,8 @@
             </div>
             <div class="col-lg-8">
                 <h4 class="fuente acerca">Acerca de mí...</h4>
-                <p>{{persona.descripcion}}</p>
-              <!--  <p class="">
-                    Soy Francys...Actualmente capacitandome de forma constante y
-                    asertiva en Lenguajes de Programación y sus entornos. <br />
-                    Interesada en ingresar en el mundo IT para continuar con mi
-                    capacitación y ampliar conocimientos, habilidades de trabajo
-                    <br />
-                    en equipo, aprender de las personas con mayor experiencia para
-                    crecer en este entorno. <br />
-                    La capacitación en el mundo IT demanda tiempo, ganas y
-                    determinación en aprender algo nuevo cada día...<br />
-                    y es mi motivación: Aprender cada día para poder aplicarlo en un
-                    entorno de trabajo.
-                </p>-->
+                <p class="desc">{{persona.descripcion}}</p>
+              
             </div>
 
         </div>

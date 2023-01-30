@@ -33,13 +33,14 @@ persona: Persona =  null;
 
   onUpdate(): void{
     const id = this.activatedRouter.snapshot.params['id'];
+    this.persona.img = this.imageService.url
     this.personaService.update(id, this.persona).subscribe(
       {
         next: (data: any) => {
           this.router.navigate(['']);
         },
         error: (err: any) => {
-          alert("Error al modificar perfil.");
+          alert("Error al modificar perfil. Error en los campos.");
           this.router.navigate(['']);
         }
       }

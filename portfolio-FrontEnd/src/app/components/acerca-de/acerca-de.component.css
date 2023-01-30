@@ -11,7 +11,7 @@
 }
 .acerca{
     margin-top: 20px;
-    margin-left: 20px;
+    margin-left: 30px;
 }
 .nombre{
     margin-left: 30px;
@@ -30,4 +30,7 @@
 }
 .fuente {
     font-family: 'Kaushan Script', cursive;
+}
+.desc{
+    margin-right: 3rem;
 }

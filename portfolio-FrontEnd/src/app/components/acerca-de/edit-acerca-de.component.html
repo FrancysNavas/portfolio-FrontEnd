@@ -21,7 +21,10 @@
                             <label for="img">Imagen de perfil</label>
                             <input type="file" class="form-control" id="img" [(ngModel)]="persona.img" name="img" (change)="uploadImage($event)"
                             accept=".jpg, .jpeg, .png" >
-                        </div>                       
+                        </div>    
+                        <div class="imagen">
+                            <img [src]="imageService.url" alt="" width="200px">
+                        </div>                   
                         <button class="btn signup">Agregar Cambios</button>
                     </form>
                 </div>
