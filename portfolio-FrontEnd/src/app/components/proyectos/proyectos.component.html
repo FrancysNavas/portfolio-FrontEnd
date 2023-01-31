@@ -1,3 +1,48 @@
+<div class="card mat-card">
+  <h4 class="fuente">Proyectos</h4>
+  <div class="row">
+    <div class="botones">
+      <button class="btn" type="button" *ngIf="isLogged">
+        <a class="a" href="" routerLink="/nuevoproyecto">
+          <img src="../../../assets/plus-sign.png" alt="" name="agregar" />
+        </a>
+      </button>
+    </div>
+
+    <div class="col lg 1"></div>
+    <div class="col-lg-10">
+      <table class="table">
+        <tbody>
+          <tr *ngFor="let Proyectos of proyectos">
+            <td>
+              <img class="img-fluid"src="{{Proyectos?.img}}"  alt="logop"  id="logop" />
+            </td>
+
+            <td>
+              <h4 class="fuente">{{ Proyectos.nombre }}</h4>
+            </td>
+            <td>{{ Proyectos.descripcion }}</td>
+            <td *ngIf="isLogged">
+              <button
+                class="btn btn-light"
+                routerLink="/editedu/{{ Proyectos.id }}">
+                <i class="bi bi-pencil-fill"><img src="../../../assets/pencil-tool.png" alt=""></i>
+              </button>
+            </td>
+            <td *ngIf="isLogged">
+              <button class="btn bt" (click)="delete(Proyectos.id)">
+                <i class="bi bi-trash-fill"><img src="../../../assets/trash-bin.png" alt=""></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<!-------------------------------------------------------------------------------------------------------
 <section class="proyectos">
     <div class="card mat-card last-card">
       
@@ -151,7 +196,7 @@
         </div>
       </div><br>
     </div>
-</section>
+</section>-->
     
     
 
