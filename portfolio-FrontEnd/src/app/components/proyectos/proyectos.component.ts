@@ -24,6 +24,7 @@ export class ProyectosComponent implements OnInit {
     }
 
   }
+  
   cargarProyectos(): void {
     this.proyectosS.lista().subscribe(
       {
@@ -35,6 +36,22 @@ export class ProyectosComponent implements OnInit {
       }
     );
   }
+  /*
+  cargarPersona(): void{
+    this.proyectosS.detail(0).subscribe(
+      {
+        next: (data: Proyectos) => {
+           = data;
+        },
+        error: (err: any) =>{
+          alert("error al cargar persona.");
+        }
+      }
+    );
+
+  }*/
+  
+  
   delete(id?: number): void {
     if (id != undefined) {
       this.proyectosS.delete(id).subscribe(

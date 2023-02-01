@@ -28,7 +28,7 @@ list(imagesRef)
     console.log("La URL es: "+ this.url);
   }
 })
-.catch(error => console.log(error))
+.catch(error => console.log(error+ "Error al obtener imagenes"))
 }
 
 }

@@ -15,7 +15,7 @@
         <tbody>
           <tr *ngFor="let Proyectos of proyectos">
             <td>
-              <img class="img-fluid"src="{{Proyectos?.img}}"  alt="logop"  id="logop" />
+              <img class="img-fluid" :src="{{ Proyectos?.img }}" alt="logop"  id="" />
             </td>
 
             <td>
@@ -25,7 +25,7 @@
             <td *ngIf="isLogged">
               <button
                 class="btn btn-light"
-                routerLink="/editedu/{{ Proyectos.id }}">
+                routerLink="/editproyectos/{{ Proyectos.id }}">
                 <i class="bi bi-pencil-fill"><img src="../../../assets/pencil-tool.png" alt=""></i>
               </button>
             </td>

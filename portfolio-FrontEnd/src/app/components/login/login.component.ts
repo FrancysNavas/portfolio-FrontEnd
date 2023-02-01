@@ -34,24 +34,7 @@ export class LoginComponent implements OnInit {
   onLogin(): void {
 
     this.loginUsuario = new LoginUsuario(this.form.nombreUsuario, this.form.password);
-    /*
-    this.authService.login(this.loginUsuario).subscribe(data => {
-      this.tokenService.setToken(data.token);
-      this.tokenService.setUserName(data.nombreUsuario);
-      this.tokenService.setAuthorities(data.authorities);
-
-      this.isLogged = true;
-      this.isLoginFail = false;
-      this.roles = this.tokenService.getAuthorities();
-      window.location.reload();
-    },
-      (err: any) => {
-        this.isLogged = false;
-        this.isLoginFail = true;
-        this.errMsj = err.error.message;
-      }
-    );*/
-
+   
     this.authService.login(this.loginUsuario).subscribe(
       {
         next: (data: { token: string; nombreUsuario: string; authorities: string[]; }) => {

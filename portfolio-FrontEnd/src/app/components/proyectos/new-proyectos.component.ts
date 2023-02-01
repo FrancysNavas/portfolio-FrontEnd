@@ -10,29 +10,21 @@ import { ProyectosService } from 'src/app/service/proyectos.service';
   styleUrls: ['./new-proyectos.component.css']
 })
 export class NewProyectosComponent implements OnInit{
-  proyectos : Proyectos = null;
+  //proyectos : Proyectos = null;
+  nombre: string = "";
+  descripcion: string = "";
+  img: string ="";
 
   constructor(private proyectosS: ProyectosService, private router: Router, 
-    public imageService: ImageService, private activatedRouter: ActivatedRoute) { }
+    public imageService: ImageService, public activatedRouter: ActivatedRoute) { }
 
   ngOnInit(): void {
-    const id = this.activatedRouter.snapshot.params['id'];
     
-    this.proyectosS.detail(id).subscribe(
-      {
-        next: (data: Proyectos) => {
-          this.proyectos = data;
-        },
-        error: (err: any) => {
-          alert("Error al modificar perfil."+ err);
-          this.router.navigate(['']);
-        }
-      }
-    );
   }
   onCreate(): void{
-    const proyectos = new Proyectos( );
-    this.proyectos.img = this.imageService.url
+    const proyectos = new Proyectos(this.nombre, this.descripcion, this.img);
+    //this.proyectosS.URL = this.imageService.url;
+    //this.img = this.imageService.url;
     this.proyectosS.save(proyectos).subscribe(
       { 
         next: (data: any) => {
@@ -47,8 +39,8 @@ export class NewProyectosComponent implements OnInit{
     );
   }
   uploadImage($event: any){
-    //const id = this.activatedRouter.snapshot.params['id'];
-    const name = "proyecto_" +1;
+    const id = this.activatedRouter.snapshot.params['id'];
+    const name = "proyecto_" + id;
     this.imageService.uploadImage($event, name);
   }
 
