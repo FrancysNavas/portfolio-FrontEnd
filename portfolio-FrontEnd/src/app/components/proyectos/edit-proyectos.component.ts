@@ -11,6 +11,7 @@ import { ProyectosService } from 'src/app/service/proyectos.service';
 })
 export class EditProyectosComponent implements OnInit{
 proyectos: Proyectos = null;
+url: string = "";
 
 constructor(private activatedRouter: ActivatedRoute, private proyectosS: ProyectosService, private router: Router,
   public imageService: ImageService){}
@@ -30,10 +31,15 @@ constructor(private activatedRouter: ActivatedRoute, private proyectosS: Proyect
       }
     );
   }
-
+  clearUrl() {
+    this.url = "";
+  }
   onUpdate(): void{
     const id = this.activatedRouter.snapshot.params['id'];
-    this.proyectos.img = this.imageService.url
+    //this.proyectos.img = this.imageService.url
+    if(this.imageService.url != "") {
+      this.proyectos.img = this.imageService.url;
+    }
     this.proyectosS.update(id, this.proyectos).subscribe(
       {
         next: (data: Proyectos) => {
@@ -45,7 +51,7 @@ constructor(private activatedRouter: ActivatedRoute, private proyectosS: Proyect
         }
       }
     );
-
+    this.imageService.clearUrl(); 
   }
 
   uploadImage($event: any){

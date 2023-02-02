@@ -11,7 +11,7 @@ import { ProyectosService } from 'src/app/service/proyectos.service';
   styleUrls: ['./new-proyectos.component.css']
 })
 export class NewProyectosComponent implements OnInit{
-  
+  url: string = "";
   nombre: string = "";
   descripcion: string = "";
   img: string ="";
@@ -23,10 +23,14 @@ export class NewProyectosComponent implements OnInit{
   ngOnInit(): void {
     
   }
+  clearUrl() {
+    this.url = "";
+  }
   onCreate(): void{
     const proyectos = new Proyectos(this.nombre, this.descripcion, this.img);
     //this.proyectosS.URL = this.imageService.url;
     //this.img = this.imageService.url;
+    
     this.proyectosS.save(proyectos).subscribe(
       { 
         next: (data: any) => {
@@ -39,11 +43,13 @@ export class NewProyectosComponent implements OnInit{
       }
       }
     );
+    this.imageService.clearUrl();   
     }
     
+    
   uploadImage($event: any){
-    const id = this.activatedRouter.snapshot.params['id'];
-    const name = "proyecto_" + id;
+    //const id = this.activatedRouter.snapshot.params['id'];
+    const name = "proyecto_";
     this.imageService.uploadImage($event, name);
   }
 /*

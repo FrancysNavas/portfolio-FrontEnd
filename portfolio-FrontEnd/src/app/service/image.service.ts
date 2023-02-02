@@ -19,8 +19,13 @@ public uploadImage($event: any, name: string){
     console.log(response)
     this.getImages()})
   .catch(error => console.log(error))
+
+  
 }
 
+clearUrl() {
+  this.url = "";
+}
 getImages(){
 const imagesRef = ref(this.storage, 'imagen')
 list(imagesRef)
@@ -29,8 +34,10 @@ list(imagesRef)
     this.url = await getDownloadURL(item);
     console.log("La URL es: "+ this.url);
   }
+  
 })
 .catch(error => console.log(error+ "Error al obtener imagenes"))
 }
 
 }
+
