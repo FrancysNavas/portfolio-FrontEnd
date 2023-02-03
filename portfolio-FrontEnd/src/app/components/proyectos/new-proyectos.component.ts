@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Storage, ref, listAll, getDownloadURL } from '@angular/fire/storage';
 import { ActivatedRoute, Router } from '@angular/router';
+import { uploadBytes } from 'firebase/storage';
 import { finalize, Observable } from 'rxjs';
 import { Proyectos } from 'src/app/model/proyectos';
 import { ImageService } from 'src/app/service/image.service';
@@ -15,12 +17,14 @@ export class NewProyectosComponent implements OnInit{
   nombre: string = "";
   descripcion: string = "";
   img: string ="";
-
+  images: string[];
     
   constructor(private proyectosS: ProyectosService, private router: Router, 
-    public imageService: ImageService, public activatedRouter: ActivatedRoute) { }
+    public imageService: ImageService, public activatedRouter: ActivatedRoute,
+    private storage: Storage) { }
 
   ngOnInit(): void {
+    this.getImages();
     
   }
   clearUrl() {
@@ -46,12 +50,38 @@ export class NewProyectosComponent implements OnInit{
     this.imageService.clearUrl();   
     }
     
-    
-  uploadImage($event: any){
-    //const id = this.activatedRouter.snapshot.params['id'];
-    const name = "proyecto_";
-    this.imageService.uploadImage($event, name);
-  }
+    uploadImagen($event: any) {
+      /*const id = this.activatedRoute.snapshot.params['id'];   (ESTA LINEA SE ELIMINA)
+      const name = "proyect_" + this.nombre; 
+      this.imageService.uploadImage($event, name)*/
+      const file = $event.target.files[0];
+      console.log(file);
+      const imgRef = ref(this.storage, `proyectos/${file.name}`);
+
+      uploadBytes(imgRef, file)
+      .then(response => {
+        console.log(response)
+      this.getImages();
+    })
+      .catch(error => console.log(error))
+    } 
+
+    getImages(){
+      const imageRef = ref(this.storage, 'proyectos');
+
+      listAll(imageRef)
+      .then(async response => {
+        console.log(response);
+        this.images = [];
+
+        for(let item of response.items){
+          const url = await getDownloadURL(item);
+          this.images.push(url);
+        }
+      })
+      .catch(error => console.log(error));
+    }
+  
 /*
   onUpload(e: any) {
     // console.log('subir', e.target.files[0]);

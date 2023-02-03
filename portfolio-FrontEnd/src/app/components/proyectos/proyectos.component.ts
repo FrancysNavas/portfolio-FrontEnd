@@ -9,7 +9,7 @@ import { TokenService } from 'src/app/service/token.service';
   styleUrls: ['./proyectos.component.css']
 })
 export class ProyectosComponent implements OnInit {
-  proyectos: Proyectos[] = [];
+  proyectos: Proyectos[];
 
   constructor(private proyectosS: ProyectosService, private tokenService: TokenService) { }
   isLogged = false;

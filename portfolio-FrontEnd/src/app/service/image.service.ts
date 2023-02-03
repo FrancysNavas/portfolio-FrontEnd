@@ -29,15 +29,11 @@ clearUrl() {
 getImages(){
 const imagesRef = ref(this.storage, 'imagen')
 list(imagesRef)
-.then(async response => {
-  for(let item of response.items ){
-    this.url = await getDownloadURL(item);
-    console.log("La URL es: "+ this.url);
-  }
-  
-})
+.then(response => console.log("La URL es: "+ this.url))
+
 .catch(error => console.log(error+ "Error al obtener imagenes"))
 }
 
 }
-
+/*for(let item of response.items ){
+    this.url = await getDownloadURL(item);*/

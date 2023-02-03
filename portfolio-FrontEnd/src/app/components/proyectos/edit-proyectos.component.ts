@@ -10,7 +10,7 @@ import { ProyectosService } from 'src/app/service/proyectos.service';
   styleUrls: ['./edit-proyectos.component.css']
 })
 export class EditProyectosComponent implements OnInit{
-proyectos: Proyectos = null;
+proyectos: Proyectos = new Proyectos("","","");
 url: string = "";
 
 constructor(private activatedRouter: ActivatedRoute, private proyectosS: ProyectosService, private router: Router,
@@ -43,6 +43,7 @@ constructor(private activatedRouter: ActivatedRoute, private proyectosS: Proyect
     this.proyectosS.update(id, this.proyectos).subscribe(
       {
         next: (data: Proyectos) => {
+        
           this.router.navigate(['']);
         },
         error: (err: any) => {
