@@ -1,1 +1,16 @@
-{}
+{
+    "hosting": {
+        "public": "dist/portfolio-FrontEnd",
+        "ignore": [
+            "firebase.json",
+            "**/.*",
+            "**/node_module/**"
+        ],
+        "rewrites": [
+            {
+                "source": "**",
+                "destination": "/index.html"
+            }
+        ]
+    }
+}
