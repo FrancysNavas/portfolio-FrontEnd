@@ -5,42 +5,49 @@
           <img src="../../../assets/arg-programa.png" alt="argprograma" width="170" height="50"/>
         </a>
           <span class="fuentes fuente">#YoProgramo</span>
-        
-        <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-          <button type="button" class="btn btn-outline">
-            <img
-              src="../../../assets/linked-in.png"
-              height="40"
-              width="40"
-              alt="linked-in"
-            />
-          </button>
-          <button type="button" class="btn btn-outline">
-            <img
-              href="https://github.com/FrancysNavas"
+          
+        <div class="navbar-collapse" >
+          
+          
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+            <a href="http://github.com/FrancysNavas" target="_blank">
+              <img
               src="../../../assets/github.png"
               height="40"
               width="40"
               alt="github"
+              title="github.com/FrancysNavas"
             />
-          </button>
-          <button type="button" class="btn btn-outline">
-            <img
+            </a>
+            <a href="https://www.linkedin.com/in/francys-e-navas-80a60b172/" target="_blank" >
+              <img
+              src="../../../assets/linked-in.png"
+              height="40"
+              width="40"
+              alt="linked-in"
+              title="linked-in/FrancysNavas"
+            />
+            </a>
+            <a class="" href="https://www.instagram.com/lafrancys.navas" target="_blank">
+              <img
               src="../../../assets/instagram.png"
               height="40"
               width="40"
               alt="instagram"
+              title="instagram/FrancysNavas"
             />
-          </button>
-          <button type="button" class="btn btn-outline">
-            <img
+            </a>
+            <a href="https://mail.google.com/mail" target="_blank">
+              <img
               src="../../../assets/envelope.png"
               height="50"
               width="50"
               alt="francys.navas.sanchez@gmail.com"
+              title="francys.navas.sanchez@gmail.com"
             />
-          </button>
+            </a>
+          </ul>
+          
           <button type="button" class="btn btn-outline-light" (click)="login()" *ngIf="!isLogged" >Login</button>
           <button type="button" class="btn btn-outline-light" (click)="onLogOut()" *ngIf="isLogged">Cerrar Sesion</button>
 
