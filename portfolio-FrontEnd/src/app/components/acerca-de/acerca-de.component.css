@@ -5,6 +5,9 @@
     margin-left: 30px;
     box-shadow: 10px 10px hsla(0, 2%, 92%, 0.722);
 }
+.row{
+    margin-left: 60px;
+}
 #second-card{
     margin: 5px;
     border-radius: 32px 32px;
