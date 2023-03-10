@@ -34,6 +34,7 @@ constructor(private activatedRouter: ActivatedRoute, private proyectosS: Proyect
   clearUrl() {
     this.url = "";
   }
+  
   onUpdate(): void{
     const id = this.activatedRouter.snapshot.params['id'];
     //this.proyectos.img = this.imageService.url
@@ -54,7 +55,7 @@ constructor(private activatedRouter: ActivatedRoute, private proyectosS: Proyect
     );
     this.imageService.clearUrl(); 
   }
-
+  
   uploadImage($event: any){
     const id = this.activatedRouter.snapshot.params['id'];
     const name = "proyecto_" + id;
