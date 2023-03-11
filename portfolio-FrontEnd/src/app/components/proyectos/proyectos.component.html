@@ -9,16 +9,14 @@
       </button>
     </div>
 
-    <div class="col lg 1"></div>
+    <div class="col lg 1">
+      <img src="../../../assets/proyectoslogo.jpg" alt="" srcset="" width=200px>
+    </div>
     <div class="col-lg-10">
       <table class="table">
         <tbody>
           <tr *ngFor="let Proyectos of proyectos">
-            <td>
-              <img class="img-fluid" src="{{ Proyectos?.img }}" alt="logop"  id="" />
-            </td>
-            <td>{{ Proyectos?.img }}</td>
-
+            
             <td>
               <h4 class="fuente">{{ Proyectos.nombre }}</h4>
             </td>

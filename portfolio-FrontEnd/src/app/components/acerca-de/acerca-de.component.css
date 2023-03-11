@@ -1,7 +1,7 @@
 #profile-image {
     border-radius: 100%;
     margin-top: -110px;
-    width: 180px;
+    width: 200px;
     margin-left: 30px;
     box-shadow: 10px 10px hsla(0, 2%, 92%, 0.722);
 }
@@ -11,6 +11,8 @@
 #second-card{
     margin: 5px;
     border-radius: 32px 32px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 .acerca{
     margin-top: 20px;

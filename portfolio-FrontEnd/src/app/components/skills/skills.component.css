@@ -4,6 +4,8 @@
 .mat-card{
     margin: 5px;
     border-radius: 32px 32px;
+    margin-right: 30px;
+    margin-left: 30px;
 }
 h4 {
     margin-left: 50px;
