@@ -13,28 +13,23 @@ import { ProyectosService } from 'src/app/service/proyectos.service';
   styleUrls: ['./new-proyectos.component.css']
 })
 export class NewProyectosComponent implements OnInit{
-  url: string = "";
+  
   nombre: string = "";
   descripcion: string = "";
-  img: string ="";
-  images: string[];
+  
     
   constructor(private proyectosS: ProyectosService, private router: Router, 
     public imageService: ImageService, public activatedRouter: ActivatedRoute,
     private storage: Storage) { }
 
   ngOnInit(): void {
-    this.getImages();
+  
     
   }
-  clearUrl() {
-    this.url = "";
-  }
+  
   onCreate(): void{
-    const proyectos = new Proyectos(this.nombre, this.descripcion, this.img);
-    //this.proyectosS.URL = this.imageService.url;
-    //this.img = this.imageService.url;
-    
+    const proyectos = new Proyectos(this.nombre, this.descripcion);
+  
     this.proyectosS.save(proyectos).subscribe(
       { 
         next: (data: any) => {
@@ -47,51 +42,8 @@ export class NewProyectosComponent implements OnInit{
       }
       }
     );
-    this.imageService.clearUrl();   
-    }
     
-    uploadImagen($event: any) {
-      /*const id = this.activatedRoute.snapshot.params['id'];   (ESTA LINEA SE ELIMINA)
-      const name = "proyect_" + this.nombre; 
-      this.imageService.uploadImage($event, name)*/
-      const file = $event.target.files[0];
-      console.log(file);
-      const imgRef = ref(this.storage, `proyectos/${file.name}`);
-
-      uploadBytes(imgRef, file)
-      .then(response => {
-        console.log(response)
-      this.getImages();
-    })
-      .catch(error => console.log(error))
-    } 
-
-    getImages(){
-      const imageRef = ref(this.storage, 'proyectos');
-
-      listAll(imageRef)
-      .then(async response => {
-        console.log(response);
-        this.images = [];
-
-        for(let item of response.items){
-          const url = await getDownloadURL(item);
-          this.images.push(url);
-        }
-      })
-      .catch(error => console.log(error));
     }
-  
-/*
-  onUpload(e: any) {
-    // console.log('subir', e.target.files[0]);
-    const id = Math.random().toString(36).substring(2);
-    const file = e.target.files[0];
-    const filePath = `uploads/profile_${id}`;
-    const ref = this.storage['ref'](filePath);
-    const task = this.storage['upload'](filePath, file);
-    this.uploadPercent = task.percentageChanges();
-    task.snapshotChanges().pipe(finalize(() => this.urlImage = ref.getDownloadURL())).subscribe();
   }
-*/
-}
+   
+  

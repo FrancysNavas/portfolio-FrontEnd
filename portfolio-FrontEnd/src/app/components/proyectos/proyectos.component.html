@@ -1,5 +1,5 @@
 <div class="card mat-card">
-  <h4 class="fuente">Proyectos</h4>
+  <h3 class="fuente">Proyectos</h3>
   <div class="row">
     <div class="botones">
       <button class="btn" type="button" *ngIf="isLogged">
@@ -24,7 +24,7 @@
             <td *ngIf="isLogged">
               <button
                 class="btn btn-light"
-                routerLink="/editproyectos/id{{ Proyectos.id }}">
+                routerLink="/editproyectos/{{ Proyectos.id }}">
                 <i class="bi bi-pencil-fill"><img src="../../../assets/pencil-tool.png" alt=""></i>
               </button>
             </td>

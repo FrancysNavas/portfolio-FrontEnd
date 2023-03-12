@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Proyectos } from 'src/app/model/proyectos';
-import { ImageService } from 'src/app/service/image.service';
 import { ProyectosService } from 'src/app/service/proyectos.service';
 
 @Component({
@@ -36,9 +35,8 @@ constructor(private activatedRouter: ActivatedRoute, private proyectosS: Proyect
         
     this.proyectosS.update(id, this.proyectos).subscribe(
       {
-        next: (data: Proyectos) => {
-        
-          this.router.navigate(['']);
+        next: (data: any) => {
+         this.router.navigate(['']);
         },
         error: (err: any) => {
           alert("Error al modificar proyecto. Error en los campos.");

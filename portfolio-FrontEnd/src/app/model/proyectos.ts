@@ -5,7 +5,7 @@ export class Proyectos {
    
 
     //crear un constructor
-    constructor (nombre:string, descripcion:string, img:string){
+    constructor (nombre:string, descripcion:string){
         this.nombre = nombre;
         this.descripcion = descripcion;
        
