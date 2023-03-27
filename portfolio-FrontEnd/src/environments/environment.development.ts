@@ -8,6 +8,7 @@ export const environment = {
     authDomain: 'frontendp-a0e71.firebaseapp.com',
     messagingSenderId: '18884252570',
   },
-    //production = true,
+  production: false,
+  URL: 'https://portofolioweb-francysnavas.koyeb.app/'
 
 };

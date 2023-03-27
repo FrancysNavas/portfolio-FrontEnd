@@ -10,14 +10,14 @@ import { PersonaService } from 'src/app/service/persona.service';
   styleUrls: ['./edit-acerca-de.component.css']
 })
 export class EditAcercaDeComponent implements OnInit {
-persona: Persona =  null;
-
+  persona: Persona = null;
+  clicked = false;
   constructor(private activatedRouter: ActivatedRoute, private personaService: PersonaService, private router: Router,
-    public imageService: ImageService){}
+    public imageService: ImageService) { }
 
   ngOnInit(): void {
     const id = this.activatedRouter.snapshot.params['id'];
-    
+    this.clicked = false;
     this.personaService.detail(id).subscribe(
       {
         next: (data: Persona) => {
@@ -31,9 +31,12 @@ persona: Persona =  null;
     );
   }
 
-  onUpdate(): void{
+  onUpdate(): void {
     const id = this.activatedRouter.snapshot.params['id'];
-    this.persona.img = this.imageService.url
+    if (this.imageService.url != '') {
+      this.persona.img = this.imageService.url;
+    }
+    this.clicked = true;
     this.personaService.update(id, this.persona).subscribe(
       {
         next: (data: any) => {
@@ -48,7 +51,7 @@ persona: Persona =  null;
 
   }
 
-  uploadImage($event: any){
+  uploadImage($event: any) {
     const id = this.activatedRouter.snapshot.params['id'];
     const name = "perfil_" + id;
     this.imageService.uploadImage($event, name);

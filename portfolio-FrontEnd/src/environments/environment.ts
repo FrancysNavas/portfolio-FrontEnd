@@ -9,7 +9,7 @@ export const environment = {
     messagingSenderId: '18884252570',
   },
 
-   // production = false,
-    URL: 'http://localhost:8080/'
+  production: true,
+  URL: 'https://portofolioweb-francysnavas.koyeb.app/'
 
 };
